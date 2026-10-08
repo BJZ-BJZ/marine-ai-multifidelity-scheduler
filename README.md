@@ -34,11 +34,11 @@
 
 Regenerate with `python figures/make_figures.py` (needs `matplotlib`, `pandas`, `numpy`).
 
-### Independent illustrations (NOT project outputs)
+### 3D illustrations of the hydrodynamic simulation context
 
-The four figures below were computed separately for visualization purposes and
-are **not results of the research projects above**. Do not cite them as project
-findings.
+The four figures below illustrate the ship-hydrodynamics context of this
+project's simulation module. They are **not numerical results of the research
+project itself** - do not cite them as project findings.
 
 ![Hull geometry render](figures/fig3_hull_geometry.png)
 ![Hull panel mesh](figures/fig4_hull_mesh.png)
