@@ -1,5 +1,13 @@
 # 单工作站船舶数字孪生：自适应多保真协同仿真
 
+## 效果展示
+
+<p align="center">
+  <img src="figures/fig5_hull_pressure.png" width="49%" />
+  <img src="figures/fig3_hull_geometry.png" width="49%" />
+</p>
+
+
 研究在计算预算下分配水动力与推进模块的在线保真度，并比较误差、切换和整体运行开销。
 
 ## 问题与方法
