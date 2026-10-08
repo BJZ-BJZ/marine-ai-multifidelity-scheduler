@@ -58,6 +58,6 @@ low-order Rankine source-panel method in double-body potential flow for surface
 pressure and streamlines. Regenerate with `python figures/make_hull_figures.py`
 (needs `matplotlib`, `numpy`; ~1 min). Not RANS results, not Fluent/StarCCM output.
 
-![Innovation: adaptive policies co-schedule the L2 budget between hydrodynamics and propulsion modules (headroom 0.90).](figures/fig7_fidelity_allocation.png)
+![Adaptive fidelity allocation (3D)](figures/fig7_allocation_3d.png)
 
-*Innovation: adaptive policies co-schedule the L2 budget between hydrodynamics and propulsion modules (headroom 0.90). Regenerate with `python figures/make_innovation_figure.py`.*
+*Innovation in 3D: adaptive policies co-schedule the L2 budget between hydrodynamics and propulsion modules (headroom 0.90, from data/summary.csv). Regenerate with `python figures/make_hull_figures.py`.*

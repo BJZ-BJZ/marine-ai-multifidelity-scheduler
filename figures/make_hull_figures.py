@@ -228,9 +228,45 @@ def fig_streamlines(C, N, A, sigma):
     plt.close(fig); print('wrote fig6')
 
 
+
+
+def fig_allocation_3d():
+    """3D bar chart of the core innovation: adaptive L2-budget allocation
+    across hydrodynamics / propulsion modules by policy (headroom 0.90).
+    Data: data/summary.csv (project's own 2048-run statistics)."""
+    import pandas as pd
+    df = pd.read_csv(Path(__file__).parent.parent / 'data' / 'summary.csv')
+    d = df[df['headroom'] == 0.9].copy()
+    order = ['Fixed-L1', 'Fixed-L2', 'Threshold-Projected', 'Greedy-Online',
+             'Switch-Aware-Greedy', 'Discounted-LinUCB', 'Contextual-Thompson',
+             'Proposed-Exact-Online']
+    short = ['Fixed-L1', 'Fixed-L2', 'Thr.-Proj.', 'Greedy', 'Sw.-Aware', 'LinUCB', 'C-Thomp.', 'Prop.-Exact']
+    d['policy'] = pd.Categorical(d['policy'], order)
+    d = d.sort_values('policy').reset_index(drop=True)
+    fig = plt.figure(figsize=(12, 7))
+    ax = fig.add_subplot(111, projection='3d')
+    xs = np.arange(len(d))
+    for j, (col, color, ypos, lab) in enumerate([
+            ('hydro_l2_share_mean', '#2e86c1', 0, 'Hydrodynamics'),
+            ('propulsion_l2_share_mean', '#e67e22', 1, 'Propulsion')]):
+        ax.bar3d(xs - 0.22 + j * 0.44 - 0.0, [ypos] * len(d), np.zeros(len(d)),
+                 0.4, 0.7, d[col].values, color=color, alpha=0.88, shade=True)
+    ax.set_xticks(xs); ax.set_xticklabels(short, fontsize=8, rotation=18, ha='right')
+    ax.set_yticks([0.35, 1.35]); ax.set_yticklabels(['Hydrodynamics', 'Propulsion'])
+    ax.set_zlabel('High-fidelity (L2) share', fontsize=10)
+    ax.set_zlim(0, 1.15)
+    ax.view_init(elev=22, azim=-58)
+    ax.set_title('Adaptive fidelity allocation across modules by policy (headroom 0.90)\n'
+                 'Innovation: policies co-schedule the L2 budget between modules '
+                 '(Prop.-Exact: 25% hydro / 72% propulsion)', fontsize=11, pad=12)
+    fig.tight_layout()
+    fig.savefig(FIG / 'fig7_allocation_3d.png', bbox_inches='tight')
+    plt.close(fig); print('wrote fig7')
+
 if __name__ == '__main__':
     fig_geometry()
     fig_mesh()
     C, N, A, sigma = fig_cp()
     fig_streamlines(C, N, A, sigma)
+    fig_allocation_3d()
     print('done')
