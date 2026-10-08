@@ -57,3 +57,7 @@ Computed in Python (no commercial CFD): parametric Wigley hull (L/B=10, B/T=1.6)
 low-order Rankine source-panel method in double-body potential flow for surface
 pressure and streamlines. Regenerate with `python figures/make_hull_figures.py`
 (needs `matplotlib`, `numpy`; ~1 min). Not RANS results, not Fluent/StarCCM output.
+
+![Innovation: adaptive policies co-schedule the L2 budget between hydrodynamics and propulsion modules (headroom 0.90).](figures/fig7_fidelity_allocation.png)
+
+*Innovation: adaptive policies co-schedule the L2 budget between hydrodynamics and propulsion modules (headroom 0.90). Regenerate with `python figures/make_innovation_figure.py`.*
