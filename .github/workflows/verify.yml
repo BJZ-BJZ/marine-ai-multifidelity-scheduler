@@ -1,0 +1,45 @@
+name: Reproduce evidence
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests
+      - run: python src/demo.py
+      - run: python src/verify.py
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: multifidelity-scheduler-verification-reports
+          path: reports/*.json
+          if-no-files-found: warn
+
+  scheduler-engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install -r requirements-engine.txt
+      - run: python -m unittest test_revision_20261002 recovered_source.tests.test_baseline7_online_allocation recovered_source.tests.test_baseline9_strong_baselines
+        working-directory: engine
+      - run: python engine/verify_statistics.py
+      - run: python engine/smoke.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scheduler-engine-reports
+          path: reports/*.json
+          if-no-files-found: warn

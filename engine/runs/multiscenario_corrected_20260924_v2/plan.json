@@ -1,0 +1,103 @@
+{
+  "scenarios": [
+    "storm_passage",
+    "multi_squall",
+    "speed_manoeuvre",
+    "coupled_extreme"
+  ],
+  "trials": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "headrooms": [
+    0.35,
+    0.6,
+    0.9,
+    1.35
+  ],
+  "repeats": 2,
+  "policies": [
+    "Fixed-L1",
+    "Fixed-L2",
+    "Threshold-Projected",
+    "Greedy-Online",
+    "Proposed-Exact-Online"
+  ],
+  "duration_s": 180.0,
+  "dt_s": 0.2,
+  "model": "synthetic POD resistance + engineering propulsion",
+  "budget": "exogenous replay; conservative batch-p90 shadow-inclusive model-call cost",
+  "policy_parameters": {
+    "switch_penalty": 0.006,
+    "utilisation_penalty": 0.004,
+    "decision_interval_steps": 5,
+    "min_dwell_steps": 15
+  },
+  "calibration_seed": 7919,
+  "timing": "complete sequential simulation; random policy order per paired repeat",
+  "inference": "CI across eight ROM trial clusters, four scenarios averaged within trial; time steps and timing repeats are not independent physics trials",
+  "hardware": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14",
+  "cpu_count": 16,
+  "model_call_timing_us": {
+    "H-L1": {
+      "median_us": 8.113,
+      "p90_us": 13.27724
+    },
+    "H-L2": {
+      "median_us": 48.637299999999996,
+      "p90_us": 57.23168
+    },
+    "P-L1": {
+      "median_us": 0.7744,
+      "p90_us": 1.3471600000000001
+    },
+    "P-L2": {
+      "median_us": 22.8535,
+      "p90_us": 28.04530000000004
+    }
+  },
+  "costs_us": {
+    "H-L1": 13.27724,
+    "H-L2": 70.50892,
+    "P-L1": 1.3471600000000001,
+    "P-L2": 29.39246000000004
+  },
+  "prior_calibration": {
+    "calibration_seed": 7919,
+    "samples": 900,
+    "hydro_prior": [
+      0.06004720162938479,
+      -0.06067944892031423,
+      0.008235736832089653,
+      -0.045917870208729665,
+      0.21021910648467765,
+      -0.0006975216103000083,
+      -0.002263677981426411,
+      0.19108593260282192,
+      0.025972298435432514
+    ],
+    "propulsion_prior": [
+      -0.020009174678087948,
+      0.15097101855416206,
+      0.04561810831945971,
+      0.12310570357949453,
+      -0.06563551725063363,
+      0.07469429818914339
+    ],
+    "hydro_gap_rmse": 0.06891469549129425,
+    "propulsion_gap_rmse": 0.07164802549940134
+  },
+  "source_sha256": {
+    "runner": "d4dc5d916dafc3783e1ed771b5b0c1d4004e09484838a2f4b051a68a9865f921",
+    "scheduler": "7871d99ac37be606e02891b3dbd0659e7a93c447f7d885cdfd045d8489372d9a",
+    "models": "0705c4d3a9a0d5560a6f96648e4fb57578f93a0764160c5ba5dbb84d38725a1f",
+    "scenario": "2a393e0ea40a0eabdbbbcfc20161c1d0bae924ffb9ec3e53b8c9d10d5d4e0167"
+  }
+}

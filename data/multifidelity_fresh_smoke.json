@@ -1,0 +1,268 @@
+{
+  "status": "PASS_FRESH_COUPLED_SIMULATION",
+  "steps": 900,
+  "fresh_strategy_runs": 32,
+  "scenario": "storm_passage",
+  "ROM_training": "fresh synthetic 48-condition POD database, seed 1",
+  "reused": "original frozen call costs, benefit priors and learning hyperparameters",
+  "physical_validation": false,
+  "records": [
+    {
+      "policy": "Fixed-L1",
+      "headroom": 0.35,
+      "composite_nrmse": 0.13692574660531076,
+      "switches": 0,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 161.35269997175783
+    },
+    {
+      "policy": "Fixed-L2",
+      "headroom": 0.35,
+      "composite_nrmse": 0.0,
+      "switches": 0,
+      "budget_violation_fraction": 1.0,
+      "elapsed_ms": 459.75839998573065
+    },
+    {
+      "policy": "Threshold-Projected",
+      "headroom": 0.35,
+      "composite_nrmse": 0.13692574660531076,
+      "switches": 0,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 141.580099996645
+    },
+    {
+      "policy": "Greedy-Online",
+      "headroom": 0.35,
+      "composite_nrmse": 0.13692576425141073,
+      "switches": 4,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 795.2237999998033
+    },
+    {
+      "policy": "Switch-Aware-Greedy",
+      "headroom": 0.35,
+      "composite_nrmse": 0.13692574660531076,
+      "switches": 0,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 655.3984000347555
+    },
+    {
+      "policy": "Discounted-LinUCB",
+      "headroom": 0.35,
+      "composite_nrmse": 0.13694124900508392,
+      "switches": 4,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 1616.3242000038736
+    },
+    {
+      "policy": "Contextual-Thompson",
+      "headroom": 0.35,
+      "composite_nrmse": 0.13694102600621805,
+      "switches": 4,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 2303.791100042872
+    },
+    {
+      "policy": "Proposed-Exact-Online",
+      "headroom": 0.35,
+      "composite_nrmse": 0.13692574660531076,
+      "switches": 0,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 736.7231999523938
+    },
+    {
+      "policy": "Fixed-L1",
+      "headroom": 0.6,
+      "composite_nrmse": 0.13692574660531076,
+      "switches": 0,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 249.10219997400418
+    },
+    {
+      "policy": "Fixed-L2",
+      "headroom": 0.6,
+      "composite_nrmse": 0.0,
+      "switches": 0,
+      "budget_violation_fraction": 1.0,
+      "elapsed_ms": 994.322500017006
+    },
+    {
+      "policy": "Threshold-Projected",
+      "headroom": 0.6,
+      "composite_nrmse": 0.12165655604738021,
+      "switches": 10,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 422.9016999597661
+    },
+    {
+      "policy": "Greedy-Online",
+      "headroom": 0.6,
+      "composite_nrmse": 0.11576392706729086,
+      "switches": 9,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 1954.7663000412285
+    },
+    {
+      "policy": "Switch-Aware-Greedy",
+      "headroom": 0.6,
+      "composite_nrmse": 0.118134210307509,
+      "switches": 3,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 1583.6679000058211
+    },
+    {
+      "policy": "Discounted-LinUCB",
+      "headroom": 0.6,
+      "composite_nrmse": 0.11524865767186138,
+      "switches": 2,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 1461.5252000512555
+    },
+    {
+      "policy": "Contextual-Thompson",
+      "headroom": 0.6,
+      "composite_nrmse": 0.11533050089721318,
+      "switches": 3,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 1922.533500008285
+    },
+    {
+      "policy": "Proposed-Exact-Online",
+      "headroom": 0.6,
+      "composite_nrmse": 0.118134210307509,
+      "switches": 3,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 1463.6148000136018
+    },
+    {
+      "policy": "Fixed-L1",
+      "headroom": 0.9,
+      "composite_nrmse": 0.13692574660531076,
+      "switches": 0,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 244.5407999912277
+    },
+    {
+      "policy": "Fixed-L2",
+      "headroom": 0.9,
+      "composite_nrmse": 0.0,
+      "switches": 0,
+      "budget_violation_fraction": 1.0,
+      "elapsed_ms": 737.7080000005662
+    },
+    {
+      "policy": "Threshold-Projected",
+      "headroom": 0.9,
+      "composite_nrmse": 0.13496884056747338,
+      "switches": 25,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 216.0130999982357
+    },
+    {
+      "policy": "Greedy-Online",
+      "headroom": 0.9,
+      "composite_nrmse": 0.12488130389822803,
+      "switches": 28,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 1381.1894000391476
+    },
+    {
+      "policy": "Switch-Aware-Greedy",
+      "headroom": 0.9,
+      "composite_nrmse": 0.101256623073053,
+      "switches": 1,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 4784.7198999952525
+    },
+    {
+      "policy": "Discounted-LinUCB",
+      "headroom": 0.9,
+      "composite_nrmse": 0.12938128636258472,
+      "switches": 15,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 2521.8625999987125
+    },
+    {
+      "policy": "Contextual-Thompson",
+      "headroom": 0.9,
+      "composite_nrmse": 0.12931425194992766,
+      "switches": 13,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 4773.792799969669
+    },
+    {
+      "policy": "Proposed-Exact-Online",
+      "headroom": 0.9,
+      "composite_nrmse": 0.12115349827801744,
+      "switches": 5,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 960.7071000500582
+    },
+    {
+      "policy": "Fixed-L1",
+      "headroom": 1.35,
+      "composite_nrmse": 0.13692574660531076,
+      "switches": 0,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 127.9235000256449
+    },
+    {
+      "policy": "Fixed-L2",
+      "headroom": 1.35,
+      "composite_nrmse": 0.0,
+      "switches": 0,
+      "budget_violation_fraction": 0.5933333333333334,
+      "elapsed_ms": 388.8262999826111
+    },
+    {
+      "policy": "Threshold-Projected",
+      "headroom": 1.35,
+      "composite_nrmse": 0.11476729975026387,
+      "switches": 23,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 206.11249998910353
+    },
+    {
+      "policy": "Greedy-Online",
+      "headroom": 1.35,
+      "composite_nrmse": 0.10738705937759517,
+      "switches": 28,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 4542.686500004493
+    },
+    {
+      "policy": "Switch-Aware-Greedy",
+      "headroom": 1.35,
+      "composite_nrmse": 0.10036988532603912,
+      "switches": 6,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 2365.8441999577917
+    },
+    {
+      "policy": "Discounted-LinUCB",
+      "headroom": 1.35,
+      "composite_nrmse": 0.09872750056771405,
+      "switches": 32,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 2301.0363000212237
+    },
+    {
+      "policy": "Contextual-Thompson",
+      "headroom": 1.35,
+      "composite_nrmse": 0.09557671383020416,
+      "switches": 24,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 2592.2728999867104
+    },
+    {
+      "policy": "Proposed-Exact-Online",
+      "headroom": 1.35,
+      "composite_nrmse": 0.100474643119017,
+      "switches": 12,
+      "budget_violation_fraction": 0.0,
+      "elapsed_ms": 663.6755999643356
+    }
+  ],
+  "scope": "One ROM and one scenario; execution check, not a new statistical replication of 2048 runs."
+}

@@ -1,0 +1,119 @@
+{
+  "policies": [
+    "Fixed-L1",
+    "Fixed-L2",
+    "Threshold-Projected",
+    "Greedy-Online",
+    "Switch-Aware-Greedy",
+    "Discounted-LinUCB",
+    "Contextual-Thompson",
+    "Proposed-Exact-Online"
+  ],
+  "headrooms": [
+    0.35,
+    0.6,
+    0.9,
+    1.35
+  ],
+  "trials": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "scenarios": [
+    "storm_passage",
+    "multi_squall",
+    "speed_manoeuvre",
+    "coupled_extreme"
+  ],
+  "repeats": 2,
+  "duration_s": 180.0,
+  "dt_s": 0.2,
+  "model": "unchanged synthetic POD + engineering propulsion",
+  "costs_us": {
+    "H-L1": 13.27724,
+    "H-L2": 70.50892,
+    "P-L1": 1.3471600000000001,
+    "P-L2": 29.39246000000004
+  },
+  "cost_source": "frozen 20260924 v2 plan, not fresh model timing",
+  "benefit_prior": {
+    "calibration_seed": 7919,
+    "samples": 900,
+    "hydro_prior": [
+      0.06004720162938479,
+      -0.06067944892031423,
+      0.008235736832089653,
+      -0.045917870208729665,
+      0.21021910648467765,
+      -0.0006975216103000083,
+      -0.002263677981426411,
+      0.19108593260282192,
+      0.025972298435432514
+    ],
+    "propulsion_prior": [
+      -0.020009174678087948,
+      0.15097101855416206,
+      0.04561810831945971,
+      0.12310570357949453,
+      -0.06563551725063363,
+      0.07469429818914339
+    ],
+    "hydro_gap_rmse": 0.06891469549129425,
+    "propulsion_gap_rmse": 0.07164802549940134
+  },
+  "proposed_config": {
+    "switch_penalty": 0.006,
+    "utilisation_penalty": 0.004,
+    "decision_interval_steps": 5,
+    "min_dwell_steps": 15
+  },
+  "learning_calibration": {
+    "Discounted-LinUCB": {
+      "calibration_seed": 7919,
+      "mode": "linucb",
+      "candidate_count": 8,
+      "selected": {
+        "config": {
+          "discount": 0.98,
+          "exploration": 0.03,
+          "min_dwell_steps": 5
+        },
+        "composite_nrmse": 0.10661408175463305,
+        "selection_score": 0.10926854491175415
+      }
+    },
+    "Contextual-Thompson": {
+      "calibration_seed": 7919,
+      "mode": "thompson",
+      "candidate_count": 8,
+      "selected": {
+        "config": {
+          "discount": 0.98,
+          "exploration": 0.01,
+          "min_dwell_steps": 5
+        },
+        "composite_nrmse": 0.10645948881000356,
+        "selection_score": 0.1091215665933357
+      }
+    }
+  },
+  "learning_score_note": "historical contextual policies retain raw local-gap scores; Greedy/Proposed use existing urgency weights",
+  "primary_comparisons": "Proposed vs Greedy, LinUCB, Thompson across four budgets, Holm family of 12",
+  "ablation_comparisons": "Proposed vs switch-aware Greedy across four budgets, separate Holm family of 4",
+  "inference": "8 ROM clusters; 4 scenarios and 2 repeats averaged within each cluster",
+  "timing": "whole simulation only; shared ROM training/calibration excluded and recorded separately",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.14",
+  "source_sha256": {
+    "run_unified_revision_20261002.py": "c4dd5518984ab615047f768438f33a8aef18efd74aaed3af1682bb135ee13f74",
+    "recovered_source\\src\\baseline7_online_allocation.py": "ae8f8ff1f445e58392433534442cbee9ad360104531148fe7e0fdf0ee3bab008",
+    "recovered_source\\src\\baseline9_strong_baselines.py": "516034c34423f7ac83b157cbb79c74bc33ca227bc06ada6bd47e7b22f346e1ae",
+    "recovered_source\\src\\baseline8_budget_sweep.py": "2a393e0ea40a0eabdbbbcfc20161c1d0bae924ffb9ec3e53b8c9d10d5d4e0167"
+  }
+}

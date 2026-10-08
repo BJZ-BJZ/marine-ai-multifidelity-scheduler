@@ -1,0 +1,8 @@
+{
+  "status": "PASS_FULL_STATISTICS_RECOMPUTATION",
+  "raw_runs": 2048,
+  "direct_runs": 64,
+  "numeric_values_checked": 931,
+  "max_absolute_error": 0.0,
+  "scope": "Original 8-ROM cluster means, Student t confidence intervals and paired p-values; two separate Holm families."
+}

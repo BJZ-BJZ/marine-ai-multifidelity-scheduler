@@ -1,0 +1,2 @@
+# Frozen artifact hashes require byte-identical checkout on every platform.
+* -text
